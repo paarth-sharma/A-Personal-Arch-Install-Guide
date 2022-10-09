@@ -458,7 +458,7 @@ The `base` package does not include all tools from the live installation, so ins
 
 + a text editor(s),
 
-	- `nano`
+	- `neovim`
 	- `vim`
 	- `vi`
 
@@ -474,6 +474,7 @@ The `base` package does not include all tools from the live installation, so ins
 	- `less`: A terminal based program for viewing text files
 	- `usbutils`: USB Device Utilities
 	- `bash-completion`: Programmable completion for the bash shell
+	- `z`: a repository-hopper
 
 These tools will be useful later. So **future me**, install these.
 
@@ -495,10 +496,10 @@ Now, change root into the newly installed system
 
 ## Time zone
 
-A selection of timezones can be found under `/usr/share/zoneinfo/`. Since I am in the Philippines, I will be using `/usr/share/zoneinfo/Asia/Manila`. Select the appropriate timezone for your country:
+A selection of timezones can be found under `/usr/share/zoneinfo/`. Since I am in India, I will be using `/usr/share/zoneinfo/Asia/Kolkata`. Select the appropriate timezone for your country:
 
 ```
-# ln -sf /usr/share/zoneinfo/Asia/Manila /etc/localtime
+# ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 ```
 
 Run `hwclock` to generate `/etc/adjtime`: 
@@ -736,7 +737,7 @@ Remember the two-types of initramfs earlier? Each type needs a specific kernel p
 Update bootloader configuration
 
 ```
-# vim /boot/loader/loader.conf
+# nvim /boot/loader/loader.conf
 ```
 
 Delete all of its content, then replaced it by:
